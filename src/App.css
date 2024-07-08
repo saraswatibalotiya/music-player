@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #170909;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #170909;
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container {
+  display: flex;
+  flex-grow: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.left-panel {
+  width: 30%;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+.right-panel {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 40px;
+  overflow: hidden;
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-buttons {
+  display: flex;
+  margin-bottom: 10px; /* Adjust margin between buttons and song list */
+}
+
+.category-text {
+  font-size: 18px;
+  cursor: pointer;
   color: white;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.category-text.selected {
+  color: grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.song-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-align: center;
+  /* background-color: #2e2e2e; */
+  /* border-radius: 5px; */
+  /* cursor: pointer; */
+  /* transition: background-color 0.3s; */
+}
+
+.song-item:hover {
+  background-color: #444;
+}
+
+.song-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.song-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-details {
+  text-align: center;
+}
+/* 
+.song-details img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+} */
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.controls button {
+  padding: 10px;
+  background-color: #444;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: #666;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .left-panel {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #333;
   }
-  to {
-    transform: rotate(360deg);
+  .right-panel {
+      width: 100%;
+      padding: 20px;
+  }
+  /* .song-details img {
+      width: 150px;
+      height: 150px;
+  } */
+  .controls {
+      flex-direction: column;
+      align-items: center;
   }
 }
